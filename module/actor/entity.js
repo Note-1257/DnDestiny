@@ -37,7 +37,7 @@ export default class Actor5e extends Actor {
   /** @override */
   prepareDerivedData() {
     const actorData = this.data;
-    const data = actorData.data;
+    const data = actorData.data; 
     const flags = actorData.flags.dnd5e || {};
     const bonuses = getProperty(data, "bonuses.abilities") || {};
 
@@ -482,7 +482,6 @@ export default class Actor5e extends Actor {
       huge: 4,
       grg: 8
     }[actorData.data.traits.size] || 1;
-    if ( this.getFlag("dnd5e", "powerfulBuild") ) mod = Math.min(mod * 2, 8);
 
     // Compute Encumbrance percentage
     weight = weight.toNearest(0.1);
