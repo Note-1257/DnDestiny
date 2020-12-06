@@ -341,7 +341,7 @@
 .dnd5e.sheet .sheet-navigation .item {
   height: 30px;
   line-height: 32px;
-  margin: 0 24px;
+  margin: 0 22px;
   border-bottom: 3px solid #b5b3a4;
 }
 .dnd5e.sheet .sheet-navigation .item.active {
