@@ -551,14 +551,6 @@
     "spell": {
       "templates": ["itemDescription", "activatedEffect", "action"],
       "level": 1,
-      "components": {
-        "value": "",
-        "vocal": false,
-        "somatic": false,
-        "material": false,
-        "ritual": false,
-        "concentration": false
-      },
       "materials": {
         "value": "",
         "consumed": false,
@@ -566,7 +558,7 @@
         "supply": 0
       },
       "preparation": {
-        "mode": "prepared",
+        "mode": "atwill",
         "prepared": false
       },
       "scaling": {
