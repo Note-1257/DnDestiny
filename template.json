@@ -170,6 +170,10 @@
           "sur": {
             "value": 0,
             "ability": "wis"
+          },
+          "tec": {
+            "value": 0,
+            "ability": "int"
           }
         },
         "traits": {
