@@ -519,7 +519,7 @@ DNDESTINY.spellComponents = {
 };
 
 // Spell Schools
-DNDESTINY.spellSchools = {
+/*DNDESTINY.spellSchools = {
   "abj": "DNDESTINY.SchoolAbj",
   "con": "DNDESTINY.SchoolCon",
   "div": "DNDESTINY.SchoolDiv",
@@ -528,7 +528,7 @@ DNDESTINY.spellSchools = {
   "ill": "DNDESTINY.SchoolIll",
   "nec": "DNDESTINY.SchoolNec",
   "trs": "DNDESTINY.SchoolTrs"
-};
+};*/
 
 // Spell Levels
 DNDESTINY.spellLevels = {
