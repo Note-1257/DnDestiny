@@ -30,12 +30,12 @@
 <ol class="items-list inventory-list">
 {{#each spellbook as |section|}}
     <li class="items-header spellbook-header flexrow">
-        <h3 class="item-name flexrow">{{section.label}}</h3>
+        <h3 class="item-name flexrow"><!--{{section.label}}--></h3>
 
-        <div class="spell-slots">
+        <!--<div class="spell-slots">
             {{#if section.usesSlots}}
             <input type="text" name="data.spells.{{section.prop}}.value" value="{{section.uses}}" placeholder="0"
-                   data-dtype="Number"/>
+                    data-dtype="Number"/>
             <span class="sep"> / </span>
             <span class="spell-max" data-level="{{section.prop}}" data-slots="{{section.slots}}">
                 {{{section.slots}}}
@@ -52,7 +52,7 @@
             {{/if}}
         </div>
 
-        <div class="spell-school">{{localize "DNDESTINY.SpellSchool"}}</div>
+        <div class="spell-school">{{localize "DNDESTINY.SpellSchool"}}</div>-->
         <div class="spell-action">{{localize "DNDESTINY.SpellUsage"}}</div>
         <div class="spell-target">{{localize "DNDESTINY.SpellTarget"}}</div>
 
@@ -76,12 +76,12 @@
                 {{/if}}
             </div>
 
-            <div class="spell-comps">
+            <!--<div class="spell-comps">
                 {{#each labels.components}}
                 <span class="spell-component {{this}}">{{this}}</span>
                 {{/each}}
             </div>
-            <div class="spell-school">{{labels.school}}</div>
+            <div class="spell-school">{{labels.school}}</div>-->
             <div class="spell-action">{{labels.activation}}</div>
             <div class="spell-target" title="{{localize 'DNDESTINY.Range'}}: {{labels.range}}">
                 {{#if labels.target}}
