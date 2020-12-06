@@ -8,6 +8,13 @@
   "esmodules": ["dnd5e.js"],
   "styles": ["dnd5e.css"],
   "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
   "socket": true,
   "gridDistance": 5,
   "gridUnits": "ft",
