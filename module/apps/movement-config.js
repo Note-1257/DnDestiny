@@ -7,9 +7,9 @@ export default class MovementConfig extends BaseEntitySheet {
   /** @override */
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
-	    title: "DND5E.MovementConfig",
-      classes: ["dnd5e"],
-      template: "systems/dnd5e/templates/apps/movement-config.html",
+	    title: "DNDESTINY.MovementConfig",
+      classes: ["dndestiny"],
+      template: "systems/dndestiny/templates/apps/movement-config.html",
       width: 240,
       height: "auto"
     });
@@ -21,7 +21,7 @@ export default class MovementConfig extends BaseEntitySheet {
   getData(options) {
     const data = {
       movement: duplicate(this.entity._data.data.attributes.movement),
-      units: CONFIG.DND5E.movementUnits
+      units: CONFIG.DNDESTINY.movementUnits
     }
     for ( let [k, v] of Object.entries(data.movement) ) {
       if ( ["units", "hover"].includes(k) ) continue;

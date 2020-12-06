@@ -1,15 +1,15 @@
 /**
- * The DnD5e game system for Foundry Virtual Tabletop
+ * The Dndestiny game system for Foundry Virtual Tabletop
  * A system for playing the fifth edition of the worlds most popular roleplaying game.
  * Author: Atropos
  * Software License: GNU GPLv3
  * Content License: https://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf
- * Repository: https://gitlab.com/foundrynet/dnd5e
- * Issue Tracker: https://gitlab.com/foundrynet/dnd5e/issues
+ * Repository: https://gitlab.com/foundrynet/dndestiny
+ * Issue Tracker: https://gitlab.com/foundrynet/dndestiny/issues
  */
 
 // Import Modules
-import { DND5E } from "./module/config.js";
+import { DNDESTINY } from "./module/config.js";
 import { registerSystemSettings } from "./module/settings.js";
 import { preloadHandlebarsTemplates } from "./module/templates.js";
 import { _getInitiativeFormula } from "./module/combat.js";
@@ -42,10 +42,10 @@ import * as migrations from "./module/migration.js";
 /* -------------------------------------------- */
 
 Hooks.once("init", function() {
-  console.log(`DnD5e | Initializing the DnD5e Game System\n${DND5E.ASCII}`);
+  console.log(`Dndestiny | Initializing the Dndestiny Game System\n${DNDESTINY.ASCII}`);
 
   // Create a namespace within the game global
-  game.dnd5e = {
+  game.dndestiny = {
     applications: {
       AbilityUseDialog,
       ActorSheetFlags,
@@ -60,7 +60,7 @@ Hooks.once("init", function() {
     canvas: {
       AbilityTemplate
     },
-    config: DND5E,
+    config: DNDESTINY,
     dice: dice,
     entities: {
       Actor5e,
@@ -72,7 +72,7 @@ Hooks.once("init", function() {
   };
 
   // Record Configuration Values
-  CONFIG.DND5E = DND5E;
+  CONFIG.DNDESTINY = DNDESTINY;
   CONFIG.Actor.entityClass = Actor5e;
   CONFIG.Item.entityClass = Item5e;
   CONFIG.time.roundTime = 6;
@@ -86,25 +86,25 @@ Hooks.once("init", function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("dnd5e", ActorSheet5eCharacter, {
+  Actors.registerSheet("dndestiny", ActorSheet5eCharacter, {
     types: ["character"],
     makeDefault: true,
-    label: "DND5E.SheetClassCharacter"
+    label: "DNDESTINY.SheetClassCharacter"
   });
-  Actors.registerSheet("dnd5e", ActorSheet5eNPC, {
+  Actors.registerSheet("dndestiny", ActorSheet5eNPC, {
     types: ["npc"],
     makeDefault: true,
-    label: "DND5E.SheetClassNPC"
+    label: "DNDESTINY.SheetClassNPC"
   });
-  Actors.registerSheet('dnd5e', ActorSheet5eVehicle, {
+  Actors.registerSheet('dndestiny', ActorSheet5eVehicle, {
     types: ['vehicle'],
     makeDefault: true,
-    label: "DND5E.SheetClassVehicle"
+    label: "DNDESTINY.SheetClassVehicle"
   });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("dnd5e", ItemSheet5e, {
+  Items.registerSheet("dndestiny", ItemSheet5e, {
     makeDefault: true,
-    label: "DND5E.SheetClassItem"
+    label: "DNDESTINY.SheetClassItem"
   });
 
   // Preload Handlebars Templates
@@ -139,11 +139,11 @@ Hooks.once("setup", function() {
 
   // Localize and sort CONFIG objects
   for ( let o of toLocalize ) {
-    const localized = Object.entries(CONFIG.DND5E[o]).map(e => {
+    const localized = Object.entries(CONFIG.DNDESTINY[o]).map(e => {
       return [e[0], game.i18n.localize(e[1])];
     });
     if ( !noSort.includes(o) ) localized.sort((a, b) => a[1].localeCompare(b[1]));
-    CONFIG.DND5E[o] = localized.reduce((obj, e) => {
+    CONFIG.DNDESTINY[o] = localized.reduce((obj, e) => {
       obj[e[0]] = e[1];
       return obj;
     }, {});
@@ -162,7 +162,7 @@ Hooks.once("ready", function() {
 
   // Determine whether a system migration is required and feasible
   if ( !game.user.isGM ) return;
-  const currentVersion = game.settings.get("dnd5e", "systemMigrationVersion");
+  const currentVersion = game.settings.get("dndestiny", "systemMigrationVersion");
   const NEEDS_MIGRATION_VERSION = "1.1.0";
   const COMPATIBLE_MIGRATION_VERSION = 0.80;
   const needsMigration = currentVersion && isNewerVersion(NEEDS_MIGRATION_VERSION, currentVersion);
@@ -170,7 +170,7 @@ Hooks.once("ready", function() {
 
   // Perform the migration
   if ( currentVersion && isNewerVersion(COMPATIBLE_MIGRATION_VERSION, currentVersion) ) {
-    const warning = `Your DnD5e system data is from too old a Foundry version and cannot be reliably migrated to the latest version. The process will be attempted, but errors may occur.`;
+    const warning = `Your Dndestiny system data is from too old a Foundry version and cannot be reliably migrated to the latest version. The process will be attempted, but errors may occur.`;
     ui.notifications.error(warning, {permanent: true});
   }
   migrations.migrateWorld();
@@ -183,7 +183,7 @@ Hooks.once("ready", function() {
 Hooks.on("canvasInit", function() {
 
   // Extend Diagonal Measurement
-  canvas.grid.diagonalRule = game.settings.get("dnd5e", "diagonalMovement");
+  canvas.grid.diagonalRule = game.settings.get("dndestiny", "diagonalMovement");
   SquareGrid.prototype.measureDistances = measureDistances;
 
   // Extend Token Resource Bars
@@ -204,7 +204,7 @@ Hooks.on("renderChatMessage", (app, html, data) => {
   chat.highlightCriticalSuccessFailure(app, html, data);
 
   // Optionally collapse the content
-  if (game.settings.get("dnd5e", "autoCollapseItemCards")) html.find(".card-content").hide();
+  if (game.settings.get("dndestiny", "autoCollapseItemCards")) html.find(".card-content").hide();
 });
 Hooks.on("getChatLogEntryContext", chat.addChatMessageContextOptions);
 Hooks.on("renderChatLog", (app, html, data) => Item5e.chatListeners(html));

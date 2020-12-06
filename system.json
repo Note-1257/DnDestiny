@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "author": "Mallen",
   "scripts": [],
-  "esmodules": ["dnd5e.js"],
-  "styles": ["dnd5e.css"],
+  "esmodules": ["dndestiny.js"],
+  "styles": ["dndestiny.css"],
   "packs": [],
   "languages": [
     {

@@ -7,8 +7,8 @@ export default class ActorSheetFlags extends BaseEntitySheet {
     const options = super.defaultOptions;
     return mergeObject(options, {
       id: "actor-flags",
-	    classes: ["dnd5e"],
-      template: "systems/dnd5e/templates/apps/actor-flags.html",
+	    classes: ["dndestiny"],
+      template: "systems/dndestiny/templates/apps/actor-flags.html",
       width: 500,
       closeOnSubmit: true
     });
@@ -18,7 +18,7 @@ export default class ActorSheetFlags extends BaseEntitySheet {
 
   /** @override */
   get title() {
-    return `${game.i18n.localize('DND5E.FlagsTitle')}: ${this.object.name}`;
+    return `${game.i18n.localize('DNDESTINY.FlagsTitle')}: ${this.object.name}`;
   }
 
   /* -------------------------------------------- */
@@ -42,14 +42,14 @@ export default class ActorSheetFlags extends BaseEntitySheet {
   _getFlags() {
     const flags = {};
     const baseData = this.entity._data;
-    for ( let [k, v] of Object.entries(CONFIG.DND5E.characterFlags) ) {
+    for ( let [k, v] of Object.entries(CONFIG.DNDESTINY.characterFlags) ) {
       if ( !flags.hasOwnProperty(v.section) ) flags[v.section] = {};
       let flag = duplicate(v);
       flag.type = v.type.name;
       flag.isCheckbox = v.type === Boolean;
       flag.isSelect = v.hasOwnProperty('choices');
-      flag.value = getProperty(baseData.flags, `dnd5e.${k}`);
-      flags[v.section][`flags.dnd5e.${k}`] = flag;
+      flag.value = getProperty(baseData.flags, `dndestiny.${k}`);
+      flags[v.section][`flags.dndestiny.${k}`] = flag;
     }
     return flags;
   }
@@ -63,18 +63,18 @@ export default class ActorSheetFlags extends BaseEntitySheet {
    */
   _getBonuses() {
     const bonuses = [
-      {name: "data.bonuses.mwak.attack", label: "DND5E.BonusMWAttack"},
-      {name: "data.bonuses.mwak.damage", label: "DND5E.BonusMWDamage"},
-      {name: "data.bonuses.rwak.attack", label: "DND5E.BonusRWAttack"},
-      {name: "data.bonuses.rwak.damage", label: "DND5E.BonusRWDamage"},
-      {name: "data.bonuses.msak.attack", label: "DND5E.BonusMSAttack"},
-      {name: "data.bonuses.msak.damage", label: "DND5E.BonusMSDamage"},
-      {name: "data.bonuses.rsak.attack", label: "DND5E.BonusRSAttack"},
-      {name: "data.bonuses.rsak.damage", label: "DND5E.BonusRSDamage"},
-      {name: "data.bonuses.abilities.check", label: "DND5E.BonusAbilityCheck"},
-      {name: "data.bonuses.abilities.save", label: "DND5E.BonusAbilitySave"},
-      {name: "data.bonuses.abilities.skill", label: "DND5E.BonusAbilitySkill"},
-      {name: "data.bonuses.spell.dc", label: "DND5E.BonusSpellDC"}
+      {name: "data.bonuses.mwak.attack", label: "DNDESTINY.BonusMWAttack"},
+      {name: "data.bonuses.mwak.damage", label: "DNDESTINY.BonusMWDamage"},
+      {name: "data.bonuses.rwak.attack", label: "DNDESTINY.BonusRWAttack"},
+      {name: "data.bonuses.rwak.damage", label: "DNDESTINY.BonusRWDamage"},
+      {name: "data.bonuses.msak.attack", label: "DNDESTINY.BonusMSAttack"},
+      {name: "data.bonuses.msak.damage", label: "DNDESTINY.BonusMSDamage"},
+      {name: "data.bonuses.rsak.attack", label: "DNDESTINY.BonusRSAttack"},
+      {name: "data.bonuses.rsak.damage", label: "DNDESTINY.BonusRSDamage"},
+      {name: "data.bonuses.abilities.check", label: "DNDESTINY.BonusAbilityCheck"},
+      {name: "data.bonuses.abilities.save", label: "DNDESTINY.BonusAbilitySave"},
+      {name: "data.bonuses.abilities.skill", label: "DNDESTINY.BonusAbilitySkill"},
+      {name: "data.bonuses.spell.dc", label: "DNDESTINY.BonusSpellDC"}
     ];
     for ( let b of bonuses ) {
       b.value = getProperty(this.object._data, b.name) || "";
@@ -91,11 +91,11 @@ export default class ActorSheetFlags extends BaseEntitySheet {
 
     // Unset any flags which are "false"
     let unset = false;
-    const flags = updateData.flags.dnd5e;
+    const flags = updateData.flags.dndestiny;
     for ( let [k, v] of Object.entries(flags) ) {
       if ( [undefined, null, "", false, 0].includes(v) ) {
         delete flags[k];
-        if ( hasProperty(actor._data.flags, `dnd5e.${k}`) ) {
+        if ( hasProperty(actor._data.flags, `dndestiny.${k}`) ) {
           unset = true;
           flags[`-=${k}`] = null;
         }

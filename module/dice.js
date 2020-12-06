@@ -58,16 +58,16 @@ export async function d20Roll({parts=[], data={}, event={}, rollMode=null, templ
     // Handle advantage
     if (adv === 1) {
       nd = elvenAccuracy ? 3 : 2;
-      messageData.flavor += ` (${game.i18n.localize("DND5E.Advantage")})`;
-      if ( "flags.dnd5e.roll" in messageData ) messageData["flags.dnd5e.roll"].advantage = true;
+      messageData.flavor += ` (${game.i18n.localize("DNDESTINY.Advantage")})`;
+      if ( "flags.dndestiny.roll" in messageData ) messageData["flags.dndestiny.roll"].advantage = true;
       mods += "kh";
     }
 
     // Handle disadvantage
     else if (adv === -1) {
       nd = 2;
-      messageData.flavor += ` (${game.i18n.localize("DND5E.Disadvantage")})`;
-      if ( "flags.dnd5e.roll" in messageData ) messageData["flags.dnd5e.roll"].disadvantage = true;
+      messageData.flavor += ` (${game.i18n.localize("DNDESTINY.Disadvantage")})`;
+      if ( "flags.dndestiny.roll" in messageData ) messageData["flags.dndestiny.roll"].disadvantage = true;
       mods += "kl";
     }
 
@@ -90,7 +90,7 @@ export async function d20Roll({parts=[], data={}, event={}, rollMode=null, templ
       const abl = data.abilities[data.ability];
       if (abl) {
         data.mod = abl.mod;
-        messageData.flavor += ` (${CONFIG.DND5E.abilities[data.ability]})`;
+        messageData.flavor += ` (${CONFIG.DNDESTINY.abilities[data.ability]})`;
       }
     }
 
@@ -115,7 +115,7 @@ export async function d20Roll({parts=[], data={}, event={}, rollMode=null, templ
 
     // If reliable talent was applied, add it to the flavor text
     if (reliableTalent && roll.dice[0].total < 10) {
-      messageData.flavor += ` (${game.i18n.localize("DND5E.FlagsReliableTalent")})`;
+      messageData.flavor += ` (${game.i18n.localize("DNDESTINY.FlagsReliableTalent")})`;
     }
     return roll;
   };
@@ -140,13 +140,13 @@ export async function d20Roll({parts=[], data={}, event={}, rollMode=null, templ
 async function _d20RollDialog({template, title, parts, data, rollMode, dialogOptions, roll}={}) {
 
   // Render modal dialog
-  template = template || "systems/dnd5e/templates/chat/roll-dialog.html";
+  template = template || "systems/dndestiny/templates/chat/roll-dialog.html";
   let dialogData = {
     formula: parts.join(" + "),
     data: data,
     rollMode: rollMode,
     rollModes: CONFIG.Dice.rollModes,
-    config: CONFIG.DND5E
+    config: CONFIG.DNDESTINY
   };
   const html = await renderTemplate(template, dialogData);
 
@@ -157,15 +157,15 @@ async function _d20RollDialog({template, title, parts, data, rollMode, dialogOpt
       content: html,
       buttons: {
         advantage: {
-          label: game.i18n.localize("DND5E.Advantage"),
+          label: game.i18n.localize("DNDESTINY.Advantage"),
           callback: html => resolve(roll(parts, 1, html[0].querySelector("form")))
         },
         normal: {
-          label: game.i18n.localize("DND5E.Normal"),
+          label: game.i18n.localize("DNDESTINY.Normal"),
           callback: html => resolve(roll(parts, 0, html[0].querySelector("form")))
         },
         disadvantage: {
-          label: game.i18n.localize("DND5E.Disadvantage"),
+          label: game.i18n.localize("DNDESTINY.Disadvantage"),
           callback: html => resolve(roll(parts, -1, html[0].querySelector("form")))
         }
       },
@@ -236,8 +236,8 @@ export async function damageRoll({parts, actor, data, event={}, rollMode=null, t
         roll.terms[0].alter(1, criticalBonusDice);
         roll._formula = roll.formula;
       }
-      messageData.flavor += ` (${game.i18n.localize("DND5E.Critical")})`;
-      if ( "flags.dnd5e.roll" in messageData ) messageData["flags.dnd5e.roll"].critical = true;
+      messageData.flavor += ` (${game.i18n.localize("DNDESTINY.Critical")})`;
+      if ( "flags.dndestiny.roll" in messageData ) messageData["flags.dndestiny.roll"].critical = true;
     }
 
     // Execute the roll
@@ -271,7 +271,7 @@ export async function damageRoll({parts, actor, data, event={}, rollMode=null, t
 async function _damageRollDialog({template, title, parts, data, allowCritical, rollMode, dialogOptions, roll}={}) {
 
   // Render modal dialog
-  template = template || "systems/dnd5e/templates/chat/roll-dialog.html";
+  template = template || "systems/dndestiny/templates/chat/roll-dialog.html";
   let dialogData = {
     formula: parts.join(" + "),
     data: data,
@@ -288,11 +288,11 @@ async function _damageRollDialog({template, title, parts, data, allowCritical, r
       buttons: {
         critical: {
           condition: allowCritical,
-          label: game.i18n.localize("DND5E.CriticalHit"),
+          label: game.i18n.localize("DNDESTINY.CriticalHit"),
           callback: html => resolve(roll(parts, true, html[0].querySelector("form")))
         },
         normal: {
-          label: game.i18n.localize(allowCritical ? "DND5E.Normal" : "DND5E.Roll"),
+          label: game.i18n.localize(allowCritical ? "DNDESTINY.Normal" : "DNDESTINY.Roll"),
           callback: html => resolve(roll(parts, false, html[0].querySelector("form")))
         },
       },

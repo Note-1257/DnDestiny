@@ -3,7 +3,7 @@
  * @return {Promise}      A Promise which resolves once the migration is completed
  */
 export const migrateWorld = async function() {
-  ui.notifications.info(`Applying DnD5E System Migration for version ${game.system.data.version}. Please be patient and do not close your game or shut down your server.`, {permanent: true});
+  ui.notifications.info(`Applying Dndestiny System Migration for version ${game.system.data.version}. Please be patient and do not close your game or shut down your server.`, {permanent: true});
 
   // Migrate World Actors
   for ( let a of game.actors.entities ) {
@@ -14,7 +14,7 @@ export const migrateWorld = async function() {
         await a.update(updateData, {enforceTypes: false});
       }
     } catch(err) {
-      err.message = `Failed dnd5e system migration for Actor ${a.name}: ${err.message}`;
+      err.message = `Failed dndestiny system migration for Actor ${a.name}: ${err.message}`;
       console.error(err);
     }
   }
@@ -28,7 +28,7 @@ export const migrateWorld = async function() {
         await i.update(updateData, {enforceTypes: false});
       }
     } catch(err) {
-      err.message = `Failed dnd5e system migration for Item ${i.name}: ${err.message}`;
+      err.message = `Failed dndestiny system migration for Item ${i.name}: ${err.message}`;
       console.error(err);
     }
   }
@@ -42,7 +42,7 @@ export const migrateWorld = async function() {
         await s.update(updateData, {enforceTypes: false});
       }
     } catch(err) {
-      err.message = `Failed dnd5e system migration for Scene ${s.name}: ${err.message}`;
+      err.message = `Failed dndestiny system migration for Scene ${s.name}: ${err.message}`;
       console.error(err);
     }
   }
@@ -55,8 +55,8 @@ export const migrateWorld = async function() {
   }
 
   // Set the migration as complete
-  game.settings.set("dnd5e", "systemMigrationVersion", game.system.data.version);
-  ui.notifications.info(`DnD5E System Migration to version ${game.system.data.version} completed!`, {permanent: true});
+  game.settings.set("dndestiny", "systemMigrationVersion", game.system.data.version);
+  ui.notifications.info(`Dndestiny System Migration to version ${game.system.data.version} completed!`, {permanent: true});
 };
 
 /* -------------------------------------------- */
@@ -103,7 +103,7 @@ export const migrateCompendium = async function(pack) {
 
     // Handle migration failures
     catch(err) {
-      err.message = `Failed dnd5e system migration for entity ${ent.name} in pack ${pack.collection}: ${err.message}`;
+      err.message = `Failed dndestiny system migration for entity ${ent.name} in pack ${pack.collection}: ${err.message}`;
       console.error(err);
     }
   }
@@ -170,12 +170,12 @@ function cleanActorData(actorData) {
   actorData.data = filterObject(actorData.data, model);
 
   // Scrub system flags
-  const allowedFlags = CONFIG.DND5E.allowedActorFlags.reduce((obj, f) => {
+  const allowedFlags = CONFIG.DNDESTINY.allowedActorFlags.reduce((obj, f) => {
     obj[f] = null;
     return obj;
   }, {});
-  if ( actorData.flags.dnd5e ) {
-    actorData.flags.dnd5e = filterObject(actorData.flags.dnd5e, allowedFlags);
+  if ( actorData.flags.dndestiny ) {
+    actorData.flags.dndestiny = filterObject(actorData.flags.dndestiny, allowedFlags);
   }
 
   // Return the scrubbed data
@@ -262,8 +262,8 @@ function _migrateActorMovement(actor, updateData) {
  */
 export async function purgeFlags(pack) {
   const cleanFlags = (flags) => {
-    const flags5e = flags.dnd5e || null;
-    return flags5e ? {dnd5e: flags5e} : {};
+    const flags5e = flags.dndestiny || null;
+    return flags5e ? {dndestiny: flags5e} : {};
   };
   await pack.configure({locked: false});
   const content = await pack.getContent();
