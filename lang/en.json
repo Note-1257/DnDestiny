@@ -691,6 +691,7 @@
 "DNDESTINY.GrenadeCharge": "Grenade Ability Charges",
 "DNDESTINY.HealthPoints": "Health Points",
 "DNDESTINY.ShieldPoints": "Shield Points",
+"DNDESTINY.CurrencyGlm": "Glimmer",
 
 "SETTINGS.5eAllowPolymorphingL": "Allow players to polymorph their own actors.",
 "SETTINGS.5eAllowPolymorphingN": "Allow Polymorphing",

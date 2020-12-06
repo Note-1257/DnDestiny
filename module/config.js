@@ -242,11 +242,7 @@ DNDESTINY.consumableTypes = {
  * @type {Object}
  */
 DNDESTINY.currencies = {
-  "pp": "DNDESTINY.CurrencyPP",
-  "gp": "DNDESTINY.CurrencyGP",
-  "ep": "DNDESTINY.CurrencyEP",
-  "sp": "DNDESTINY.CurrencySP",
-  "cp": "DNDESTINY.CurrencyCP",
+  "glm": "DNDESTINY.CurrencyGlm"
 };
 
 
@@ -255,10 +251,6 @@ DNDESTINY.currencies = {
  * @type {{string, object}}
  */
 DNDESTINY.currencyConversion = {
-  cp: {into: "sp", each: 10},
-  sp: {into: "ep", each: 5 },
-  ep: {into: "gp", each: 2 },
-  gp: {into: "pp", each: 10}
 };
 
 /* -------------------------------------------- */
