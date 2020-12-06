@@ -432,7 +432,7 @@ DND5E.skills = {
   "slt": "DND5E.SkillSlt",
   "ste": "DND5E.SkillSte",
   "sur": "DND5E.SkillSur",
-  "tec": "DNDestiny.SkillTec"
+  "tec": "DND5E.SkillTec"
 };
 
 

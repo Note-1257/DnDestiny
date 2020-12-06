@@ -1167,11 +1167,11 @@ export default class Item5e extends Item {
   /* -------------------------------------------- */
 
   /**
-   * Create a consumable spell scroll Item from a spell Item.
-   * @param {Item5e} spell      The spell to be made into a scroll
-   * @return {Item5e}           The created scroll consumable item
-   * @private
-   */
+  Create a consumable spell scroll Item from a spell Item.
+  @param {Item5e} spell      The spell to be made into a scroll
+  @return {Item5e}           The created scroll consumable item
+  @private
+  /
   static async createScrollFromSpell(spell) {
 
     // Get spell data
@@ -1212,5 +1212,5 @@ export default class Item5e extends Item {
       }
     });
     return new this(spellScrollData);
-  }
+  }*/
 }
