@@ -15,7 +15,7 @@ export default class Actor5e extends Actor {
    * @return {boolean}
    */
   get isPolymorphed() {
-    return this.getFlag("dnd5e", "isPolymorphed") || false;
+    return this.getFlag("dndestiny", "isPolymorphed") || false;
   }
 
   /* -------------------------------------------- */
