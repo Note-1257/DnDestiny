@@ -686,6 +686,11 @@
 "DNDESTINY.spell": "light ability",
 
 "DNDESTINY.ClassAbilityCharge": "Class Ability Charges",
+"DNDESTINY.MeleeAbilityCharge": "Melee Ability Charges",
+"DNDESTINY.SuperAbilityCharge": "Super Ability Charges",
+"DNDESTINY.GrenadeAbilityCharge": "Grenade Ability Charges",
+"DNDESTINY.HealthPoints": "Health Points",
+"DNDESTINY.ShieldPoints": "Shield Points",
 
 "SETTINGS.5eAllowPolymorphingL": "Allow players to polymorph their own actors.",
 "SETTINGS.5eAllowPolymorphingN": "Allow Polymorphing",

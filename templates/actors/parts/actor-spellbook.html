@@ -31,9 +31,33 @@
         <li class="attribute classcharge">
             <h4 class="attribute-name box-title">{{ localize "DNDESTINY.ClassAbilityCharge" }}</h4>
             <div class="attribute-value multiple">
-                <input name="data.attributes.charges.class.value" type="text" value="{{data.attributes.charges.class.value}}" placeholder="10" data-dtype="Number"/>
+                <input name="data.attributes.charges.class.value" type="text" value="{{data.attributes.charges.class.value}}" placeholder="0" data-dtype="Number"/>
                 <span class="sep"> / </span>
                 <input name="data.attributes.charges.class.max" type="text" value="{{data.attributes.charges.class.max}}" placeholder="0" data-dtype="Number"/>
+            </div>
+        </li>
+        <li class="attribute meleecharge">
+            <h4 class="attribute-name box-title">{{ localize "DNDESTINY.MeleeCharge" }}</h4>
+            <div class="attribute-value multiple">
+                <input name="data.attributes.charges.melee.value" type="text" value="{{data.attributes.charges.melee.value}}" placeholder="0" data-dtype="Number"/>
+                <span class="sep"> / </span>
+                <input name="data.attributes.charges.melee.max" type="text" value="{{data.attributes.charges.melee.max}}" placeholder="0" data-dtype="Number"/>
+            </div>
+        </li>
+        <li class="attribute supercharge">
+            <h4 class="attribute-name box-title">{{ localize "DNDESTINY.SuperCharge" }}</h4>
+            <div class="attribute-value multiple">
+                <input name="data.attributes.charges.super.value" type="text" value="{{data.attributes.charges.super.value}}" placeholder="0" data-dtype="Number"/>
+                <span class="sep"> / </span>
+                <input name="data.attributes.charges.super.max" type="text" value="{{data.attributes.charges.super.max}}" placeholder="0" data-dtype="Number"/>
+            </div>
+        </li>
+        <li class="attribute grenadecharge">
+            <h4 class="attribute-name box-title">{{ localize "DNDESTINY.GrenadeCharge" }}</h4>
+            <div class="attribute-value multiple">
+                <input name="data.attributes.charges.grenade.value" type="text" value="{{data.attributes.charges.grenade.value}}" placeholder="0" data-dtype="Number"/>
+                <span class="sep"> / </span>
+                <input name="data.attributes.charges.grenade.max" type="text" value="{{data.attributes.charges.grenade.max}}" placeholder="0" data-dtype="Number"/>
             </div>
         </li>
     </ul>

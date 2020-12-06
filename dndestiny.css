@@ -562,7 +562,7 @@
   margin: 0;
 }
 .dndestiny.sheet.actor .sheet-header .attributes .attribute {
-  height: 70px;
+  height: 130px;
   margin: 0;
   border: none;
   border-right: 2px groove #eeede0;
@@ -1326,7 +1326,7 @@
 /* ----------------------------------------- */
 .dndestiny.sheet.actor.character {
   min-width: 720px;
-  min-height: 704px;
+  min-height: 765px;
   /* ----------------------------------------- */
   /*  Sheet Header                             */
   /* ----------------------------------------- */
@@ -1343,7 +1343,7 @@
 .dndestiny.sheet.actor.character .sheet-header img.profile {
   flex: 0 0 160px;
   max-width: 160px;
-  height: 160px;
+  height: 220px;
 }
 .dndestiny.sheet.actor.character .sheet-header .charlevel {
   flex: 0 0 20px;

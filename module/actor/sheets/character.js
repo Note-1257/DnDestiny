@@ -29,9 +29,9 @@ export default class ActorSheet5eCharacter extends ActorSheet5e {
     const sheetData = super.getData();
 
     // Temporary HP
-    let hp = sheetData.data.attributes.hp;
-    if (hp.temp === 0) delete hp.temp;
-    if (hp.tempmax === 0) delete hp.tempmax;
+    let shld = sheetData.data.attributes.shld;
+    if (shld.temp === 0) delete shld.temp;
+    if (shld.tempmax === 0) delete shld.tempmax;
 
     // Resources
     sheetData["resources"] = ["primary", "secondary", "tertiary"].reduce((arr, r) => {

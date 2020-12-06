@@ -46,17 +46,23 @@
             {{!-- Header Attributes --}}
             <ul class="attributes flexrow">
                 <li class="attribute health">
-                    <h4 class="attribute-name box-title">{{ localize "DNDESTINY.HitPoints" }}</h4>
+                    <h4 class="attribute-name box-title">{{ localize "DNDESTINY.HealthPoints" }}</h4>
                     <div class="attribute-value multiple">
                         <input name="data.attributes.hp.value" type="text" value="{{data.attributes.hp.value}}" placeholder="10" data-dtype="Number"/>
                         <span class="sep"> / </span>
                         <input name="data.attributes.hp.max" type="text" value="{{data.attributes.hp.max}}" placeholder="10" data-dtype="Number"/>
                     </div>
+                    <h4 class="attribute-name box-title">{{ localize "DNDESTINY.ShieldPoints" }}</h4>
+                    <div class="attribute-value multiple">
+                        <input name="data.attributes.shld.value" type="text" value="{{data.attributes.shld.value}}" placeholder="10" data-dtype="Number"/>
+                        <span class="sep"> / </span>
+                        <input name="data.attributes.shld.max" type="text" value="{{data.attributes.shld.max}}" placeholder="10" data-dtype="Number"/>
+                    </div>
                     <footer class="attribute-footer">
-                        <input name="data.attributes.hp.temp" type="text" class="temphp" placeholder="+{{ localize 'DNDESTINY.Temp' }}"
-                               value="{{data.attributes.hp.temp}}" data-dtype="Number"/>
-                        <input name="data.attributes.hp.tempmax" type="text" class="temphp" placeholder="+{{ localize 'DNDESTINY.Max' }}"
-                               value="{{data.attributes.hp.tempmax}}" data-dtype="Number"/>
+                        <input name="data.attributes.shld.temp" type="text" class="temphp" placeholder="+{{ localize 'DNDESTINY.Temp' }}"
+                                value="{{data.attributes.shld.temp}}" data-dtype="Number"/>
+                        <input name="data.attributes.shld.tempmax" type="text" class="temphp" placeholder="+{{ localize 'DNDESTINY.Max' }}"
+                                value="{{data.attributes.shld.tempmax}}" data-dtype="Number"/>
                     </footer>
                 </li>
 

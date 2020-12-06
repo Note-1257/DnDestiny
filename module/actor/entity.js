@@ -1053,6 +1053,17 @@ export default class Actor5e extends Actor {
     // Recover pact slots.
     const pact = this.data.data.spells.pact;
     updateData['data.spells.pact.value'] = pact.override || pact.max;
+
+    //Recover Shields
+    const shld = this.data.data.attributes.shld;
+    updateData['data.attributes.shld.value'] = shld.max;
+
+    //Recover ability slots
+    const ability = this.data.data.attributes.charges;
+    updateData['data.attributes.charges.class.value'] = ability.class.max;
+    updateData['data.attributes.charges.melee.value'] = ability.melee.max;
+    updateData['data.attributes.charges.super.value'] = ability.super.max;
+    updateData['data.attributes.charges.grenade.value'] = ability.grenade.max;
     await this.update(updateData);
 
     // Recover item uses
@@ -1177,6 +1188,17 @@ export default class Actor5e extends Actor {
         updateItems.push({_id: item.id, "data.recharge.charged": true});
       }
     }
+
+    //Recover Shields
+    const shld = this.data.data.attributes.shld;
+    updateData['data.attributes.shld.value'] = shld.max;
+
+    //Recover ability slots
+    const ability = this.data.data.attributes.charges;
+    updateData['data.attributes.charges.class.value'] = ability.class.max;
+    updateData['data.attributes.charges.melee.value'] = ability.melee.max;
+    updateData['data.attributes.charges.super.value'] = ability.super.max;
+    updateData['data.attributes.charges.grenade.value'] = ability.grenade.max;
 
     // Perform the updates
     await this.update(updateData);
