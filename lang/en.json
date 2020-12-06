@@ -684,6 +684,9 @@
 "DNDESTINY.of": "of",
 "DNDESTINY.per": "per",
 "DNDESTINY.spell": "light ability",
+
+"DNDESTINY.ClassAbilityCharge": "Class Ability Charges",
+
 "SETTINGS.5eAllowPolymorphingL": "Allow players to polymorph their own actors.",
 "SETTINGS.5eAllowPolymorphingN": "Allow Polymorphing",
 "SETTINGS.5eAutoCollapseCardL": "Automatically collapse Item Card descriptions in the Chat Log",

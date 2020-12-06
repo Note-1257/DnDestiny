@@ -266,7 +266,25 @@
           "max": null
         },
         "exhaustion": 0,
-        "inspiration": 0
+        "inspiration": 0,
+        "charges": {
+          "class": {
+            "value": 0,
+            "max": 0
+          },
+          "melee": {
+            "value": 0,
+            "max": 0
+          },
+          "super": {
+            "value": 0,
+            "max": 0
+          },
+          "grenade": {
+            "value": 0,
+            "max": 0
+          }
+        }
       },
       "details": {
         "background": "",

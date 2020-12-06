@@ -26,6 +26,18 @@
         <li class="filter-item" data-filter="prepared">{{localize "DNDESTINY.Prepared"}}{{#if preparedSpells}} ({{preparedSpells}}){{/if}}</li>
     </ul>
 </div>
+<div class="inventory-filters spellbook-filters flexrow">
+    <ul class="attributes flexrow">
+        <li class="attribute classcharge">
+            <h4 class="attribute-name box-title">{{ localize "DNDESTINY.ClassAbilityCharge" }}</h4>
+            <div class="attribute-value multiple">
+                <input name="data.attributes.charges.class.value" type="text" value="{{data.attributes.charges.class.value}}" placeholder="10" data-dtype="Number"/>
+                <span class="sep"> / </span>
+                <input name="data.attributes.charges.class.max" type="text" value="{{data.attributes.charges.class.max}}" placeholder="0" data-dtype="Number"/>
+            </div>
+        </li>
+    </ul>
+</div>
 
 <ol class="items-list inventory-list">
 {{#each spellbook as |section|}}
