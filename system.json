@@ -2,7 +2,7 @@
   "name": "dndestiny",
   "title": "DnDestiny",
   "description": "a modified DnD fifth edition system to work with the DnDestiny variation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Mallen",
   "scripts": [],
   "esmodules": ["dndestiny.js"],
@@ -23,6 +23,6 @@
   "minimumCoreVersion": "0.7.6",
   "compatibleCoreVersion": "0.7.8",
   "url": "https://github.com/Mallen-git/DnDestiny",
-  "manifest": "https://raw.githubusercontent.com/Mallen-git/DnDestiny/master/system.json",
-  "download": "https://github.com/Mallen-git/DnDestiny/archive/master.zip"
+  "manifest": "https://raw.githubusercontent.com/Mallen-git/DnDestiny/everythingdestiny/system.json",
+  "download": "https://github.com/Mallen-git/DnDestiny/archive/everythingdestiny.zip"
 }
