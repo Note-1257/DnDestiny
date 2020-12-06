@@ -1,9 +1,9 @@
 {
-  "name": "dnd5e",
-  "title": "DnD5e - Fifth Edition System",
-  "description": "A system for playing the fifth edition of the worlds most popular role-playing game in the Foundry Virtual Tabletop environment.",
-  "version": "1.1.1",
-  "author": "Atropos",
+  "name": "dndestiny",
+  "title": "DnDestiny",
+  "description": "a modified DnD fifth edition system to work with the DnDestiny variation",
+  "version": "0.1.0",
+  "author": "Mallen",
   "scripts": [],
   "esmodules": ["dnd5e.js"],
   "styles": ["dnd5e.css"],
@@ -93,7 +93,7 @@
   "secondaryTokenAttribute": null,
   "minimumCoreVersion": "0.7.6",
   "compatibleCoreVersion": "0.7.6",
-  "url": "https://gitlab.com/foundrynet/dnd5e",
-  "manifest": "https://gitlab.com/foundrynet/dnd5e/raw/master/system.json",
-  "download": "https://gitlab.com/foundrynet/dnd5e/-/archive/release-1.1.1/dnd5e-release-1.1.1.zip"
+  "url": "https://github.com/Mallen-git/DnDestiny",
+  "manifest": "https://github.com/Mallen-git/DnDestiny/blob/master/system.json",
+  "download": "https://github.com/Mallen-git/DnDestiny/archive/master.zip"
 }
