@@ -173,10 +173,7 @@ export default class ItemSheet5e extends ItemSheet {
 
     else if ( item.type === "spell" ) {
       props.push(
-        labels.components,
         labels.materials,
-        item.data.components.concentration ? game.i18n.localize("DNDESTINY.Concentration") : null,
-        item.data.components.ritual ? game.i18n.localize("DNDESTINY.Ritual") : null
       )
     }
 

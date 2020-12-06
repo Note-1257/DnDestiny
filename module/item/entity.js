@@ -587,7 +587,7 @@ export default class Item5e extends Item {
   _spellChatData(data, labels, props) {
     props.push(
       labels.level,
-      labels.components + (labels.materials ? ` (${labels.materials})` : "")
+      (labels.materials ? ` (${labels.materials})` : "")
     );
   }
 

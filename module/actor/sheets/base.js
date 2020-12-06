@@ -301,12 +301,6 @@ export default class ActorSheet5e extends ActorSheet {
       }
 
       // Spell-specific filters
-      if ( filters.has("ritual") ) {
-        if (data.components.ritual !== true) return false;
-      }
-      if ( filters.has("concentration") ) {
-        if (data.components.concentration !== true) return false;
-      }
       if ( filters.has("prepared") ) {
         if ( data.level === 0 || ["innate", "always"].includes(data.preparation.mode) ) return true;
         if ( this.actor.data.type === "npc" ) return true;

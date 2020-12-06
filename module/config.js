@@ -510,14 +510,6 @@ DNDESTINY.weaponProperties = {
   "ver": "DNDESTINY.WeaponPropertiesVer"
 };
 
-
-// Spell Components
-DNDESTINY.spellComponents = {
-  "V": "DNDESTINY.ComponentVerbal",
-  "S": "DNDESTINY.ComponentSomatic",
-  "M": "DNDESTINY.ComponentMaterial"
-};
-
 // Spell Schools
 /*DNDESTINY.spellSchools = {
   "abj": "DNDESTINY.SchoolAbj",
@@ -537,11 +529,7 @@ DNDESTINY.spellLevels = {
   2: "DNDESTINY.SpellLevel2",
   3: "DNDESTINY.SpellLevel3",
   4: "DNDESTINY.SpellLevel4",
-  5: "DNDESTINY.SpellLevel5",
-  6: "DNDESTINY.SpellLevel6",
-  7: "DNDESTINY.SpellLevel7",
-  8: "DNDESTINY.SpellLevel8",
-  9: "DNDESTINY.SpellLevel9"
+  5: "DNDESTINY.SpellLevel5"
 };
 
 // Spell Scroll Compendium UUIDs
