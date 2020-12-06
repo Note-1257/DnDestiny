@@ -686,9 +686,9 @@
 "DNDESTINY.spell": "light ability",
 
 "DNDESTINY.ClassAbilityCharge": "Class Ability Charges",
-"DNDESTINY.MeleeAbilityCharge": "Melee Ability Charges",
-"DNDESTINY.SuperAbilityCharge": "Super Ability Charges",
-"DNDESTINY.GrenadeAbilityCharge": "Grenade Ability Charges",
+"DNDESTINY.MeleeCharge": "Melee Ability Charges",
+"DNDESTINY.SuperCharge": "Super Ability Charges",
+"DNDESTINY.GrenadeCharge": "Grenade Ability Charges",
 "DNDESTINY.HealthPoints": "Health Points",
 "DNDESTINY.ShieldPoints": "Shield Points",
 
