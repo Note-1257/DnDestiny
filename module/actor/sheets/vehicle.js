@@ -12,7 +12,7 @@ export default class ActorSheet5eVehicle extends ActorSheet5e {
    */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["dnd5e", "sheet", "actor", "vehicle"],
+      classes: ["dndestiny", "sheet", "actor", "vehicle"],
       width: 605,
       height: 680
     });
@@ -43,10 +43,10 @@ export default class ActorSheet5eVehicle extends ActorSheet5e {
 
     // Compute currency weight
     const totalCoins = Object.values(actorData.data.currency).reduce((acc, denom) => acc + denom, 0);
-    totalWeight += totalCoins / CONFIG.DND5E.encumbrance.currencyPerWeight;
+    totalWeight += totalCoins / CONFIG.DNDESTINY.encumbrance.currencyPerWeight;
 
     // Vehicle weights are an order of magnitude greater.
-    totalWeight /= CONFIG.DND5E.encumbrance.vehicleWeightMultiplier;
+    totalWeight /= CONFIG.DNDESTINY.encumbrance.vehicleWeightMultiplier;
 
     // Compute overall encumbrance
     const max = actorData.data.attributes.capacity.cargo;
@@ -66,12 +66,12 @@ export default class ActorSheet5eVehicle extends ActorSheet5e {
     // Determine crewed status
     const isCrewed = item.data.crewed;
     item.toggleClass = isCrewed ? 'active' : '';
-    item.toggleTitle = game.i18n.localize(`DND5E.${isCrewed ? 'Crewed' : 'Uncrewed'}`);
+    item.toggleTitle = game.i18n.localize(`DNDESTINY.${isCrewed ? 'Crewed' : 'Uncrewed'}`);
 
     // Handle crew actions
     if (item.type === 'feat' && item.data.activation.type === 'crew') {
       item.crew = item.data.activation.cost;
-      item.cover = game.i18n.localize(`DND5E.${item.data.cover ? 'CoverTotal' : 'None'}`);
+      item.cover = game.i18n.localize(`DNDESTINY.${item.data.cover ? 'CoverTotal' : 'None'}`);
       if (item.data.cover === .5) item.cover = '½';
       else if (item.data.cover === .75) item.cover = '¾';
       else if (item.data.cover === null) item.cover = '—';
@@ -99,66 +99,66 @@ export default class ActorSheet5eVehicle extends ActorSheet5e {
    */
   _prepareItems(data) {
     const cargoColumns = [{
-      label: game.i18n.localize('DND5E.Quantity'),
+      label: game.i18n.localize('DNDESTINY.Quantity'),
       css: 'item-qty',
       property: 'quantity',
       editable: 'Number'
     }];
 
     const equipmentColumns = [{
-      label: game.i18n.localize('DND5E.Quantity'),
+      label: game.i18n.localize('DNDESTINY.Quantity'),
       css: 'item-qty',
       property: 'data.quantity'
     }, {
-      label: game.i18n.localize('DND5E.AC'),
+      label: game.i18n.localize('DNDESTINY.AC'),
       css: 'item-ac',
       property: 'data.armor.value'
     }, {
-      label: game.i18n.localize('DND5E.HP'),
+      label: game.i18n.localize('DNDESTINY.HP'),
       css: 'item-hp',
       property: 'data.hp.value',
       editable: 'Number'
     }, {
-      label: game.i18n.localize('DND5E.Threshold'),
+      label: game.i18n.localize('DNDESTINY.Threshold'),
       css: 'item-threshold',
       property: 'threshold'
     }];
 
     const features = {
       actions: {
-        label: game.i18n.localize('DND5E.ActionPl'),
+        label: game.i18n.localize('DNDESTINY.ActionPl'),
         items: [],
         crewable: true,
         dataset: {type: 'feat', 'activation.type': 'crew'},
         columns: [{
-          label: game.i18n.localize('DND5E.VehicleCrew'),
+          label: game.i18n.localize('DNDESTINY.VehicleCrew'),
           css: 'item-crew',
           property: 'crew'
         }, {
-          label: game.i18n.localize('DND5E.Cover'),
+          label: game.i18n.localize('DNDESTINY.Cover'),
           css: 'item-cover',
           property: 'cover'
         }]
       },
       equipment: {
-        label: game.i18n.localize('DND5E.ItemTypeEquipment'),
+        label: game.i18n.localize('DNDESTINY.ItemTypeEquipment'),
         items: [],
         crewable: true,
         dataset: {type: 'equipment', 'armor.type': 'vehicle'},
         columns: equipmentColumns
       },
       passive: {
-        label: game.i18n.localize('DND5E.Features'),
+        label: game.i18n.localize('DNDESTINY.Features'),
         items: [],
         dataset: {type: 'feat'}
       },
       reactions: {
-        label: game.i18n.localize('DND5E.ReactionPl'),
+        label: game.i18n.localize('DNDESTINY.ReactionPl'),
         items: [],
         dataset: {type: 'feat', 'activation.type': 'reaction'}
       },
       weapons: {
-        label: game.i18n.localize('DND5E.ItemTypeWeaponPl'),
+        label: game.i18n.localize('DNDESTINY.ItemTypeWeaponPl'),
         items: [],
         crewable: true,
         dataset: {type: 'weapon', 'weapon-type': 'siege'},
@@ -168,7 +168,7 @@ export default class ActorSheet5eVehicle extends ActorSheet5e {
 
     const cargo = {
       crew: {
-        label: game.i18n.localize('DND5E.VehicleCrew'),
+        label: game.i18n.localize('DNDESTINY.VehicleCrew'),
         items: data.data.cargo.crew,
         css: 'cargo-row crew',
         editableName: true,
@@ -176,7 +176,7 @@ export default class ActorSheet5eVehicle extends ActorSheet5e {
         columns: cargoColumns
       },
       passengers: {
-        label: game.i18n.localize('DND5E.VehiclePassengers'),
+        label: game.i18n.localize('DNDESTINY.VehiclePassengers'),
         items: data.data.cargo.passengers,
         css: 'cargo-row passengers',
         editableName: true,
@@ -184,21 +184,21 @@ export default class ActorSheet5eVehicle extends ActorSheet5e {
         columns: cargoColumns
       },
       cargo: {
-        label: game.i18n.localize('DND5E.VehicleCargo'),
+        label: game.i18n.localize('DNDESTINY.VehicleCargo'),
         items: [],
         dataset: {type: 'loot'},
         columns: [{
-          label: game.i18n.localize('DND5E.Quantity'),
+          label: game.i18n.localize('DNDESTINY.Quantity'),
           css: 'item-qty',
           property: 'data.quantity',
           editable: 'Number'
         }, {
-          label: game.i18n.localize('DND5E.Price'),
+          label: game.i18n.localize('DNDESTINY.Price'),
           css: 'item-price',
           property: 'data.price',
           editable: 'Number'
         }, {
-          label: game.i18n.localize('DND5E.Weight'),
+          label: game.i18n.localize('DNDESTINY.Weight'),
           css: 'item-weight',
           property: 'data.weight',
           editable: 'Number'
