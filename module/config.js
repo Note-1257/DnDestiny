@@ -61,14 +61,14 @@ DNDESTINY.weaponProficiencies = {
 };
 
 DNDESTINY.toolProficiencies = {
-  "art": "DNDESTINY.ToolArtisans",
-  "disg": "DNDESTINY.ToolDisguiseKit",
-  "forg": "DNDESTINY.ToolForgeryKit",
-  "game": "DNDESTINY.ToolGamingSet",
-  "herb": "DNDESTINY.ToolHerbalismKit",
-  "music": "DNDESTINY.ToolMusicalInstrument",
-  "navg": "DNDESTINY.ToolNavigators",
-  "pois": "DNDESTINY.ToolPoisonersKit",
+  "arm": "DNDESTINY.ToolArmorsmithing",
+  "climb": "DNDESTINY.ToolClimbing",
+  "elec": "DNDESTINY.ToolElectronics",
+  "medi": "DNDESTINY.ToolMedical",
+  "scuba": "DNDESTINY.ToolSCUBA",
+  "sew": "DNDESTINY.ToolSewing",
+  "wep": "DNDESTINY.ToolWeaponsmithing",
+  "whit": "DNDESTINY.ToolWhittling",
   "thief": "DNDESTINY.ToolThieves",
   "vehicle": "DNDESTINY.ToolVehicle"
 };
@@ -213,8 +213,7 @@ DNDESTINY.equipmentTypes = {
 DNDESTINY.armorProficiencies = {
   "lgt": DNDESTINY.equipmentTypes.light,
   "med": DNDESTINY.equipmentTypes.medium,
-  "hvy": DNDESTINY.equipmentTypes.heavy,
-  "shl": "DNDESTINY.EquipmentShieldProficiency"
+  "hvy": DNDESTINY.equipmentTypes.heavy
 };
 
 
@@ -270,7 +269,12 @@ DNDESTINY.damageTypes = {
   "psychic": "DNDESTINY.DamagePsychic",
   "radiant": "DNDESTINY.DamageRadiant",
   "slashing": "DNDESTINY.DamageSlashing",
-  "thunder": "DNDESTINY.DamageThunder"
+  "thunder": "DNDESTINY.DamageThunder",
+  "darkness": "DNDESTINY.DamageDarkness",
+  "kinetic": "DNDESTINY.DamageKinetic",
+  "arc": "DNDESTINY.DamageArc",
+  "solar": "DNDESTINY.DamageSolar",
+  "void": "DNDESTINY.DamageVoid"
 };
 
 // Damage Resistance Types
@@ -316,7 +320,7 @@ for ( let [k, v] of Object.entries(DNDESTINY.movementUnits) ) {
  * @type {Object}
  */
 DNDESTINY.encumbrance = {
-  currencyPerWeight: 50,
+  currencyPerWeight: 100,
   strMultiplier: 15,
   vehicleWeightMultiplier: 2000 // 2000 lbs in a ton
 };
@@ -632,36 +636,38 @@ DNDESTINY.conditionTypes = {
   "prone": "DNDESTINY.ConProne",
   "restrained": "DNDESTINY.ConRestrained",
   "stunned": "DNDESTINY.ConStunned",
-  "unconscious": "DNDESTINY.ConUnconscious"
+  "unconscious": "DNDESTINY.ConUnconscious",
+  "activecamo": "DNDESTINY.ConActiveCamo",
+  "aiming": "DNDESTINY.ConAiming",
+  "burning": "DNDESTINY.ConBurning",
+  "combatprone": "DNDESTINY.ConCombatProne",
+  "electrified": "DNDESTINY.ConElectrified",
+  "empowered": "DNDESTINY.ConEmpowered",
+  "suppresed": "DNDESTINY.ConSuppressed",
+  "tethered": "DNDESTINY.ConTethered",
+  "weakened": "DNDESTINY.ConWeakened",
 };
 
 // Languages
 DNDESTINY.languages = {
   "common": "DNDESTINY.LanguagesCommon",
-  "aarakocra": "DNDESTINY.LanguagesAarakocra",
-  "abyssal": "DNDESTINY.LanguagesAbyssal",
-  "aquan": "DNDESTINY.LanguagesAquan",
-  "auran": "DNDESTINY.LanguagesAuran",
-  "celestial": "DNDESTINY.LanguagesCelestial",
-  "deep": "DNDESTINY.LanguagesDeepSpeech",
-  "draconic": "DNDESTINY.LanguagesDraconic",
-  "druidic": "DNDESTINY.LanguagesDruidic",
-  "dwarvish": "DNDESTINY.LanguagesDwarvish",
-  "elvish": "DNDESTINY.LanguagesElvish",
-  "giant": "DNDESTINY.LanguagesGiant",
-  "gith": "DNDESTINY.LanguagesGith",
-  "gnomish": "DNDESTINY.LanguagesGnomish",
-  "goblin": "DNDESTINY.LanguagesGoblin",
-  "gnoll": "DNDESTINY.LanguagesGnoll",
-  "halfling": "DNDESTINY.LanguagesHalfling",
-  "ignan": "DNDESTINY.LanguagesIgnan",
-  "infernal": "DNDESTINY.LanguagesInfernal",
-  "orc": "DNDESTINY.LanguagesOrc",
-  "primordial": "DNDESTINY.LanguagesPrimordial",
-  "sylvan": "DNDESTINY.LanguagesSylvan",
-  "terran": "DNDESTINY.LanguagesTerran",
-  "cant": "DNDESTINY.LanguagesThievesCant",
-  "undercommon": "DNDESTINY.LanguagesUndercommon"
+  "chinese": "DNDESTINY.LanguagesChinese",
+  "english": "DNDESTINY.LanguagesEnglish",
+  "risen": "DNDESTINY.LanguagesRisen",
+  "risensnl": "DNDESTINY.LanguagesRisenSNL",
+  "russian": "DNDESTINY.LanguagesRussian",
+  "spanish": "DNDESTINY.LanguagesSpanish",
+  "speech": "DNDESTINY.LanguagesSpeech",
+  "arabic": "DNDESTINY.LanguagesArabic",
+  "french": "DNDESTINY.LanguagesFrench",
+  "german": "DNDESTINY.LanguagesGerman",
+  "hebrew": "DNDESTINY.LanguagesHebrew",
+  "japanese": "DNDESTINY.LanguagesJapanese",
+  "taiwanese": "DNDESTINY.LanguagesTaiwanese",
+  "eliksni": "DNDESTINY.LanguagesEliksni",
+  "hexinary": "DNDESTINY.LanguagesHexinary",
+  "krill": "DNDESTINY.LanguagesKrill",
+  "ulurant": "DNDESTINY.LanguagesUlurant"
 };
 
 // Character Level XP Requirements
