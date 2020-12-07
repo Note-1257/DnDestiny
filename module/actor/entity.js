@@ -1236,8 +1236,12 @@ export default class Actor5e extends Actor {
     }
   }
 
-
-
+  /**
+  * @param {boolean} dialog  Present a confirmation dialog window whether or not to take a long rest
+  * @param {boolean} chat    Summarize the results of the rest workflow as a chat message
+  * @param {boolean} newDay  Whether the long rest carries over to a new day
+  * @return {Promise}  
+  */
 
   async briefRest({dialog=true, chat=true, newDay=true}={}) {
     const data = this.data.data;
