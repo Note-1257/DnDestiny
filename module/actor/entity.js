@@ -1,6 +1,7 @@
 import { d20Roll, damageRoll } from "../dice.js";
 import ShortRestDialog from "../apps/short-rest.js";
 import LongRestDialog from "../apps/long-rest.js";
+import BriefRestDialog from "../apps/brief-rest.js";
 import AbilityUseDialog from "../apps/ability-use-dialog.js";
 import AbilityTemplate from "../pixi/ability-template.js";
 import {DNDESTINY} from '../config.js';
@@ -1243,7 +1244,7 @@ export default class Actor5e extends Actor {
   * @return {Promise}  
   */
 
-  async briefRest({dialog=true, chat=true}={}) {
+  async briefRest({dialog=true, chat=true, newDay=true}={}) {
     const data = this.data.data;
 
     if ( dialog ) {
