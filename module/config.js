@@ -475,8 +475,10 @@ DNDESTINY.spellScalingModes = {
 DNDESTINY.weaponTypes = {
   "simpleM": "DNDESTINY.WeaponSimpleM",
   "simpleR": "DNDESTINY.WeaponSimpleR",
+  "simpleF": "DNDESTINY.WeaponSimpleF",
   "martialM": "DNDESTINY.WeaponMartialM",
   "martialR": "DNDESTINY.WeaponMartialR",
+  "martialF": "DNDESTINY.WeaponMartialF",
   "natural": "DNDESTINY.WeaponNatural",
   "improv": "DNDESTINY.WeaponImprov",
   "siege": "DNDESTINY.WeaponSiege"
