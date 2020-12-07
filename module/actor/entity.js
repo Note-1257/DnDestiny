@@ -1236,6 +1236,55 @@ export default class Actor5e extends Actor {
     }
   }
 
+
+
+
+  async briefRest({dialog=true, chat=true, newDay=true}={}) {
+    const data = this.data.data;
+
+    const updateData = {};
+
+    //Recover Shields
+    const shld = this.data.data.attributes.shld;
+    updateData['data.attributes.shld.value'] = shld.max;
+
+    //Recover ability slots
+    const ability = this.data.data.attributes.charges;
+    updateData['data.attributes.charges.class.value'] = ability.class.max;
+    updateData['data.attributes.charges.melee.value'] = ability.melee.max;
+    updateData['data.attributes.charges.super.value'] = ability.super.max;
+    updateData['data.attributes.charges.grenade.value'] = ability.grenade.max;
+
+    // Perform the updates
+    await this.update(updateData);
+    if ( updateItems.length ) await this.updateEmbeddedEntity("OwnedItem", updateItems);
+
+    // Display a Chat Message summarizing the rest effects
+    let restFlavor;
+    restFlavor = game.i18n.localize("DNDESTINY.BriefRest");
+
+    // Determine the chat message to display
+    if ( chat ) {
+      let lrMessage = "DNDESTINY.BriefRestResultShort";
+      ChatMessage.create({
+        user: game.user._id,
+        speaker: {actor: this, alias: this.name},
+        flavor: restFlavor,
+        content: game.i18n.format(lrMessage, {name: this.name})
+      });
+    }
+
+    // Return data summarizing the rest effects
+    return {
+      dhd: dhd,
+      dhp: dhp,
+      updateData: updateData,
+      updateItems: updateItems,
+      newDay: newDay
+    }
+  }
+
+
   /* -------------------------------------------- */
 
   /**

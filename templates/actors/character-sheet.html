@@ -71,10 +71,17 @@
                     <div class="attribute-value multiple">
                         <label class="hit-dice">{{data.attributes.hd}} <span class="sep"> / </span> {{data.details.level}}</label>
                     </div>
-                    <footer class="attribute-footer">
-                        <a class="rest short-rest">{{ localize "DNDESTINY.RestS" }}</a>
-                        <a class="rest long-rest">{{ localize "DNDESTINY.RestL" }}</a>
-                    </footer>
+                    <ol class="rest-list">
+                        <li class="item flexrow">
+                            <a class="rest brief-rest">{{ localize "DNDESTINY.BriefRest" }}</a>
+                        </il>
+                        <li class="item flexrow">
+                            <a class="rest short-rest">{{ localize "DNDESTINY.ShortRest" }}</a>
+                        </il>
+                        <li class="item flexrow">
+                            <a class="rest long-rest">{{ localize "DNDESTINY.LongRest" }}</a>
+                        </il>
+                    </ol>
                 </li>
 
                 <li class="attribute">
