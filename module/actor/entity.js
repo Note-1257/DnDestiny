@@ -566,6 +566,11 @@ export default class Actor5e extends Actor {
       const delta = isDelta ? (-1 * value) : (hp.value + hp.temp) - value;
       return this.applyDamage(delta);
     }
+    if ( attribute === "attributes.shld" ) {
+      const shld = getProperty(this.data.data, attribute);
+      const delta = isDelta ? (-1 * value) : (shld.value + shld.temp) - value;
+      return this.applyDamage(delta);
+    }
     return super.modifyTokenAttribute(attribute, value, isDelta, isBar);
   }
 
@@ -580,6 +585,16 @@ export default class Actor5e extends Actor {
   async applyDamage(amount=0, multiplier=1) {
     amount = Math.floor(parseInt(amount) * multiplier);
     const hp = this.data.data.attributes.hp;
+    const shld = this.data.data.attributes.shld;
+
+    // Deduct from temp shields first
+    const stmp = parseInt(shld.temp) || 0;
+    const sdt = amount > 0 ? Math.min(stmp, amount) : 0;
+
+    // Remaining goes to shields
+    const stmpMax = parseInt(shld.tempmax) || 0;
+    const sdh = Math.clamped(shld.value - (amount - sdt), 0, shld.max + stmpMax);
+
 
     // Deduct damage from temp HP first
     const tmp = parseInt(hp.temp) || 0;
@@ -592,7 +607,9 @@ export default class Actor5e extends Actor {
     // Update the Actor
     const updates = {
       "data.attributes.hp.temp": tmp - dt,
-      "data.attributes.hp.value": dh
+      "data.attributes.hp.value": dh,
+      "data.attributes.shld.temp": stmp - sdt,
+      "data.attributes.shld.value": sdh
     };
 
     // Delegate damage application to a hook
@@ -603,6 +620,15 @@ export default class Actor5e extends Actor {
       isDelta: false,
       isBar: true
     }, updates);
+    const allowed2 = Hooks.call("modifyTokenAttribute", {
+      attribute: "attributes.shld",
+      value: amount,
+      isDelta: false,
+      isBar: true
+    }, updates);
+    if (allowed !== allowed2) {
+      allowed = false;
+    }
     return allowed !== false ? this.update(updates) : this;
   }
 
