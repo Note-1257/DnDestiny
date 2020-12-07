@@ -174,6 +174,7 @@ export default class ActorSheet5eCharacter extends ActorSheet5e {
     // Short and Long Rest
     html.find('.short-rest').click(this._onShortRest.bind(this));
     html.find('.long-rest').click(this._onLongRest.bind(this));
+    html.find('.brief-rest').click(this._onBriefRest.bind(this));
 
     // Rollable sheet actions
     html.find(".rollable[data-action]").click(this._onSheetAction.bind(this));
@@ -229,6 +230,17 @@ export default class ActorSheet5eCharacter extends ActorSheet5e {
     event.preventDefault();
     await this._onSubmit(event);
     return this.actor.shortRest();
+  }
+
+    /**
+   * Take a short rest, calling the relevant function on the Actor instance
+   * @param {Event} event   The triggering click event
+   * @private
+   */
+  async _onBriefRest(event) {
+    event.preventDefault();
+    await this._onSubmit(event);
+    return this.actor.briefRest();
   }
 
   /* -------------------------------------------- */
