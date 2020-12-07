@@ -1274,13 +1274,7 @@ export default class Actor5e extends Actor {
     }
 
     // Return data summarizing the rest effects
-    return {
-      dhd: dhd,
-      dhp: dhp,
-      updateData: updateData,
-      updateItems: updateItems,
-      newDay: newDay
-    }
+    return {}
   }
 
 
