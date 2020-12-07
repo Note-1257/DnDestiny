@@ -726,7 +726,7 @@
 "DNDESTINY.LanguagesKrill": "Krill",
 "DNDESTINY.LanguagesUlurant": "Ulurant",
 "DNDESTINY.BriefRest": "Brief Rest",
-"DNDESTINY.BriefRestResult": "{name} takes a brief rest.",
+"DNDESTINY.BriefRestResultShort": "{name} takes a brief rest.",
 
 "SETTINGS.5eAllowPolymorphingL": "Allow players to polymorph their own actors.",
 "SETTINGS.5eAllowPolymorphingN": "Allow Polymorphing",
