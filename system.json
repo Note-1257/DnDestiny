@@ -7,7 +7,16 @@
   "scripts": [],
   "esmodules": ["dndestiny.js"],
   "styles": ["dndestiny.css"],
-  "packs": [],
+  "packs": [
+    {
+      "name": "racial-features",
+      "label": "Racial Features",
+      "system": "dndestiny",
+      "module": "dndestiny",
+      "path": "packs/racial-features.db",
+      "entity": "Item"
+    }
+  ],
   "languages": [
     {
       "lang": "en",
