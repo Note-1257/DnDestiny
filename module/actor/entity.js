@@ -1257,7 +1257,6 @@ export default class Actor5e extends Actor {
 
     // Perform the updates
     await this.update(updateData);
-    if ( updateItems.length ) await this.updateEmbeddedEntity("OwnedItem", updateItems);
 
     // Display a Chat Message summarizing the rest effects
     let restFlavor;

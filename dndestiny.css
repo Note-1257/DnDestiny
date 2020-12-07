@@ -570,6 +570,7 @@
 }
 .dndestiny.sheet.actor .sheet-header .attributes .attribute:last-child {
   border-right: none;
+  padding: 0 0 0 0;
 }
 .dndestiny.sheet.actor .sheet-header .attributes .attribute .attribute-value {
   height: 30px;
