@@ -15,6 +15,46 @@
       "module": "dndestiny",
       "path": "packs/racial-features.db",
       "entity": "Item"
+    },
+    {
+      "name": "light-abilities",
+      "label": "Light Abilities",
+      "system": "dndestiny",
+      "module": "dndestiny",
+      "path": "packs/light-abilities.db",
+      "entity": "Item"
+    },
+    {
+      "name": "items",
+      "label": "Items",
+      "system": "dndestiny",
+      "module": "dndestiny",
+      "path": "packs/items.db",
+      "entity": "Item"
+    },
+    {
+      "name": "foundations",
+      "label": "Foundations",
+      "system": "dndestiny",
+      "module": "dndestiny",
+      "path": "packs/foundations.db",
+      "entity": "Item"
+    },
+    {
+      "name": "classes",
+      "label": "Classes",
+      "system": "dndestiny",
+      "module": "dndestiny",
+      "path": "packs/Classes.db",
+      "entity": "Item"
+    },
+    {
+      "name": "class-features",
+      "label": "Class Features",
+      "system": "dndestiny",
+      "module": "dndestiny",
+      "path": "packs/class-features.db",
+      "entity": "Item"
     }
   ],
   "languages": [
