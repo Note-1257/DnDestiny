@@ -2,7 +2,7 @@
   "name": "dndestiny",
   "title": "DnDestiny",
   "description": "A modified DnD fifth edition system to work with the DnDestiny variation",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Mallen",
   "scripts": [],
   "esmodules": ["dndestiny.js"],
