@@ -1,4 +1,5 @@
 {
+  "id":"test",
   "name": "dndestiny",
   "title": "DnDestiny",
   "description": "A modified DnD fifth edition system to work with the DnDestiny variation",
@@ -71,7 +72,7 @@
   "secondaryTokenAttribute": "attributes.shld",
   "minimumCoreVersion": "0.7.6",
   "compatibleCoreVersion": "0.8",
-  "url": "https://github.com/Mallen-git/DnDestiny",
-  "manifest": "https://raw.githubusercontent.com/Mallen-git/DnDestiny/master/system.json",
+  "url": "https://github.com/Note-1257/DnDestiny",
+  "manifest": "https://raw.githubusercontent.com/Note-1257/DnDestiny/master/system.json",
   "download": "https://github.com/Mallen-git/DnDestiny/archive/master.zip"
 }
