@@ -4,6 +4,10 @@
   "title": "DnDestiny",
   "description": "A modified DnD fifth edition system to work with the DnDestiny variation",
   "version": "1.1.0",
+  "compatibility": {
+    "minimum": "11.315",
+    "verified": "12"
+  },
   "author": "Mallen",
   "scripts": [],
   "esmodules": ["dndestiny.js"],
