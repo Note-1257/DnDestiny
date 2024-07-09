@@ -70,8 +70,10 @@
     }
   ],
   "socket": true,
-  "grid.Distance": 5,
-  "grid.Units": "ft",
+  "grid": {
+    "distance": 5,
+    "units": "ft"
+  },
   "primaryTokenAttribute": "attributes.hp",
   "secondaryTokenAttribute": "attributes.shld",
   "minimumCoreVersion": "0.7.6",
