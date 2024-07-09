@@ -8,7 +8,13 @@
     "minimum": "11.315",
     "verified": "12"
   },
-  "author": "Mallen",
+  "authors": [
+    {
+      "name": "Mallen",
+      "url": "https://github.com/Mallen-git/DnDestiny",
+      "flags": {}
+    }
+  ],
   "scripts": [],
   "esmodules": ["dndestiny.js"],
   "styles": ["dndestiny.css"],
